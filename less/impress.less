@@ -43,9 +43,13 @@
         opacity: 0.5;
 
         transition: 1s;
-        &.active {
+        &.active, &:hover {
             opacity: 1;
+
+            cursor: crosshair;
         }
+
+        padding: 10px;
     }
 
     &.impress-on-title {
@@ -59,6 +63,10 @@
     &.impress-on-overview {
         .step {
             opacity: 1;
+            &:hover {
+                box-shadow: 0 0 1px 2px fadeout(@gray, 20%);
+                background-color: fadeout(@gray-light, 70%)
+            }
         }
     }
 
@@ -104,5 +112,9 @@
         a {
             font-size: 150%;
         }
+    }
+
+    #overview {
+        pointer-events: none;
     }
 }
