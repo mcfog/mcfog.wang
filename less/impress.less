@@ -1,0 +1,108 @@
+@import './partial/variables';
+
+@import './bootstrap/normalize';
+@import './bootstrap/mixins';
+@import './bootstrap/type';
+@import './bootstrap/utilities';
+@import './bootstrap/scaffolding';
+@import './bootstrap/media';
+
+.impress-not-supported {
+    font-size: 100%;
+    width: 100%;
+
+    .step {
+        border: 1px solid silver;
+        max-width: 100%;
+        padding: 20px 5px;
+        margin: 5px;
+    }
+
+    #skill {
+        .clearfix();
+        img {
+            padding: 5px;
+            margin: 5px;
+            width: 80px;
+            background: fadeout(#fff, 15%);
+            border-radius: 10px;
+            float: left;
+        }
+    }
+
+}
+
+.impress-supported {
+    background: radial-gradient(circle, fadeout(@gray-dark, 10%), #000);
+
+    .fallback-message {
+        display: none;
+    }
+
+    .step {
+        opacity: 0.5;
+
+        transition: 1s;
+        &.active {
+            opacity: 1;
+        }
+    }
+
+    &.impress-on-title {
+        .step {
+            opacity: 0.3;
+        }
+        .step.present {
+            opacity: 1;
+        }
+    }
+    &.impress-on-overview {
+        .step {
+            opacity: 1;
+        }
+    }
+
+    #title {
+        width: 800px;
+        text-align: center;
+    }
+
+
+    h2 {
+        width: 800px;
+        text-align: center;
+    }
+
+    .row>div {
+        width: 300px;
+    }
+
+    #skill {
+        .clearfix();
+        img {
+            padding: 5px;
+            margin: 5px;
+            width: 80px;
+            background: fadeout(#fff, 15%);
+            border-radius: 10px;
+            float: left;
+        }
+    }
+
+    #link, #exp {
+        img {
+            height: 64px;
+        }
+
+        .media-body {
+            float: left;
+        }
+        h4 {
+            font-size: 200%;
+        }
+
+        a {
+            font-size: 150%;
+        }
+    }
+}
