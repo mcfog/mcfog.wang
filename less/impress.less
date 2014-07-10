@@ -6,6 +6,49 @@
 @import './bootstrap/utilities';
 @import './bootstrap/scaffolding';
 @import './bootstrap/media';
+@import './bootstrap/labels';
+@import './bootstrap/panels';
+@import './bootstrap/list-group';
+
+#pinboard {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 19999;
+
+    a {
+        color: silver;
+    }
+
+    .nav {
+        transition: 0.5s;
+
+        h5 {
+            opacity: 0.3;
+
+            &:hover {
+                opacity: 0.8;
+            }        
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        #impress-on-title * .title {
+
+        }
+    }
+
+    .links {
+        a {
+            display: inline-block;
+            padding: 1em;
+        }
+    }
+}
 
 .impress-not-supported {
     font-size: 100%;
@@ -52,14 +95,25 @@
         padding: 10px;
     }
 
-    &.impress-on-title {
-        .step {
-            opacity: 0.3;
-        }
-        .step.present {
-            opacity: 1;
-        }
+
+    .mask {
+        background: radial-gradient(circle closest-side,
+            fadeout(#FFF, 100%),
+            fadeout(@gray-darker, 90%) 50%,
+            rgba(0, 0, 0, 50%) 70%,
+            rgba(0, 0, 0, 1));
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+
+        z-index: 9999;
+        transition: 1s;
+
+        pointer-events: none;
     }
+
     &.impress-on-overview {
         .step {
             opacity: 1;
@@ -67,6 +121,10 @@
                 box-shadow: 0 0 1px 2px fadeout(@gray, 20%);
                 background-color: fadeout(@gray-light, 70%)
             }
+        }
+
+        .mask {
+            opacity: 0;
         }
     }
 
@@ -111,6 +169,27 @@
 
         a {
             font-size: 150%;
+        }
+    }
+
+    #acg_labels {
+        width: 500px;
+        text-align: center;
+        .label {
+            display: inline-block;
+            margin: 10px;
+            font-size: 120%;
+            padding: 0.5em 1em;
+        }
+    }
+
+    #toys {
+        .list-group {
+            width: 300px;
+            li {
+                &:extend(.list-group-item);
+                color: @gray-darker;
+            }
         }
     }
 
