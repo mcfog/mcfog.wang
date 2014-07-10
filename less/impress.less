@@ -17,9 +17,10 @@
     }
     position: fixed;
     top: 0;
-    bottom: 0;
     left: 0;
     right: 0;
+    overflow: visible;
+    height: 0;
     z-index: 19999;
 
     a {
@@ -27,14 +28,34 @@
     }
 
     .nav {
-        transition: 0.5s;
+        padding-left: 2em;
+
+        h4 {
+            &:after { content: ' ▾' }
+            color: silver;
+            opacity: 0.4;
+            cursor: default;
+        }
 
         h5 {
-            opacity: 0.3;
+            opacity: 0.0;
+        }
 
-            &:hover {
+        height: 40px;
+        overflow: hidden;
+
+        &:hover {
+            height: auto;
+            h5 {
                 opacity: 0.8;
-            }        
+                transition: 0.5s;
+                pointer-events: all;
+            }
+
+            h4 {
+                opacity: 1;
+                &:after { content: ' ' }
+            }
         }
 
         a:hover {
