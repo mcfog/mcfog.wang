@@ -10,7 +10,7 @@
     <div id="pinboard">
         
         <div class="nav pull-left">
-            <h4>nav</h4>
+            <h4>Jump to...</h4>
             <h5 class="title">
                 <a href="#title">title</a>
             </h5>
@@ -19,8 +19,8 @@
             </h5>
             <h5 class="acgfan">
                 <a href="#acgfan">acg fan</a>
+            </h5>
             <h5 class="geek">
-            <h5>
                 <a href="#geek">geek</a>
             </h5>
             <h5 class="overview">
@@ -109,7 +109,14 @@
                             <img src="/image/ifaclub.png" alt="" class="media-object pull-left">
                             <div class="media-body pull-left">
                                 <h4 class="media-heading">ifaclub.com</h4>
-                                <p>startup, 2015-now, <a href="https://www.v2ex.com/t/184149">hiring</a></p>
+                                <p>2015-2017</p>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <img src="/image/amino.png" alt="" class="media-object pull-left">
+                            <div class="media-body pull-left">
+                                <h4 class="media-heading">Amino Apps</h4>
+                                <p>2017- </p>
                             </div>
                         </li>
                     </ul>
@@ -136,7 +143,7 @@
 
             <div id="acg_labels" class="step" data-x="0" data-y="1000">
                 <div class="clearfix">
-                    <div class="label label-default">PS3</div>
+                    <div class="label label-default">Switch</div>
                     <div class="label label-default">3DS</div>
                     <div class="label label-default">PSV</div>
                 </div>
@@ -156,11 +163,10 @@
             <div id="toys" class="step" data-x="1200" data-y="800">
                 <div class="panel panel-primary">
                     <div class="panel-heading text-center">
-                        <h4>my toys 2015</h4>
+                        <h4>my toys 2017</h4>
                     </div>
                     <ul class="list-group">
-                        <li>iTouch</li>
-                        <li>Xiaomi Router</li>
+                        <li>Nintendo Switch</li>
                     </ul>
                 </div>
             </div>
@@ -203,13 +209,13 @@
                     _addWheelListener(elem, support, callback, useCapture);
 
                     // handle MozMousePixelScroll in older Firefox
-                    if (support == "DOMMouseScroll") {
+                    if (support === "DOMMouseScroll") {
                         _addWheelListener(elem, "MozMousePixelScroll", callback, useCapture);
                     }
-                };
+                }
 
                 function _addWheelListener(elem, eventName, callback, useCapture) {
-                    elem[ _addEventListener ](prefix + eventName, support == "wheel" ? callback : function (originalEvent) {
+                    elem[ _addEventListener ](prefix + eventName, support === "wheel" ? callback : function (originalEvent) {
                         !originalEvent && ( originalEvent = window.event );
 
                         // create a normalized event object
@@ -218,7 +224,7 @@
                             originalEvent: originalEvent,
                             target: originalEvent.target || originalEvent.srcElement,
                             type: "wheel",
-                            deltaMode: originalEvent.type == "MozMousePixelScroll" ? 0 : 1,
+                            deltaMode: originalEvent.type === "MozMousePixelScroll" ? 0 : 1,
                             deltaX: 0,
                             deltaZ: 0,
                             preventDefault: function () {
@@ -229,7 +235,7 @@
                         };
 
                         // calculate deltaY (and deltaX) according to the event
-                        if (support == "mousewheel") {
+                        if (support === "mousewheel") {
                             event.deltaY = -1 / 40 * originalEvent.wheelDelta;
                             // Webkit also support wheelDeltaX
                             originalEvent.wheelDeltaX && ( event.deltaX = -1 / 40 * originalEvent.wheelDeltaX );
