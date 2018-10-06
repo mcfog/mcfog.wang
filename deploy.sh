@@ -84,6 +84,7 @@ fi
 
 rm -rf $deploy_directory
 parcel build index.html
+cp CNAME $deploy_directory
 
 disable_expanded_output
 git fetch --force $repo $deploy_branch:$deploy_branch
