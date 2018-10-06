@@ -43,7 +43,7 @@ footer {
     display: flex;
     flex-flow: column nowrap;
     align-content: stretch;
-    justify-content: center;
+    justify-content: flex-start;
 
     font-size: smaller;
     color: $oc-gray-4;
