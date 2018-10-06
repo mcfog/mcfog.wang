@@ -1,0 +1,54 @@
+@import 'normalize.css';
+@import '~open-color/open-color.scss';
+
+body {
+    color:$oc-gray-1;
+    background: radial-gradient(circle at center, $oc-gray-8, #000) center/cover no-repeat;
+    min-height: 100vh;
+}
+
+a {
+    color: inherit;
+}
+
+.main {
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center;
+    justify-content: space-around;
+
+    text-align: center;
+}
+article#about {
+    flex: 30 0 auto;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center;
+    justify-content: center;
+
+    .anime {
+        color: $oc-red-4;
+    }
+    .code {
+        color: $oc-green-4;
+    }
+    .game {
+        color: $oc-blue-4;
+    }
+}
+
+footer {
+    flex: 10 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: stretch;
+    justify-content: center;
+
+    font-size: smaller;
+    color: $oc-gray-4;
+    i.at:after {
+        content: '@';
+        font-style: normal;
+    }
+}
